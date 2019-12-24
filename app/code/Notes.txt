@@ -1,3 +1,32 @@
+Magento 2.3.3 installation instructions:
+Install magento2 with composer 
+
+step 1:
+install xampp
+
+step 2:
+install composer
+
+step 3:
+follow installation instruction at https://devdocs.magento.com/guides/v2.3/install-gde/composer.html.
+
+step 4: 
+replace line 138 in the file below by: $realPath = str_replace('\\', '/', $this->fileDriver->getRealPath($path));
+
+C:\xampp\htdocs\magentocomposer\vendor\magento\framework\View\Element\Template\File\validator.php
+
+
+
+troubleshoot:
+1. error session timeout when adding product to card:
+- UPDATE `core_config_data` SET `value` = 'http://127.0.0.1:port/magento/' WHERE `core_config_data`.`path` = 'web/unsecure/base_url';
+- UPDATE `core_config_data` SET `value` = 'http://127.0.0.1:port/magento/' WHERE `core_config_data`.`path` = 'web/secure/base_url';
+- php bin/magento cache:flush
+
+refer: https://www.youtube.com/watch?v=4Oqjm7jd1Ig
+
+
+
 1. enable module:
 run command line: php bin/magento module:enable Pbritka_HelloWorld
 2. upgrade installed modules: 
