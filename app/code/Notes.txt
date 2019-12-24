@@ -31,3 +31,11 @@ refer: https://www.youtube.com/watch?v=4Oqjm7jd1Ig
 run command line: php bin/magento module:enable Pbritka_HelloWorld
 2. upgrade installed modules: 
 run command line: php bin/magento setup:upgrade
+
+
+====================
+
+Install sample data:
+cmd => go to the root magento folder
+run command line: php bin/magento sampledata:deploy
+you will be asked to fullfill credentials(the public/private keys provided at https://marketplace.magento.com/customer/accessKeys/)
